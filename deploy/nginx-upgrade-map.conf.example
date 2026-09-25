@@ -1,0 +1,5 @@
+# Install in the Nginx http context (for example, conf.d), before the site.
+map $http_upgrade $goldcube_gateway_connection_upgrade {
+    default upgrade;
+    ''      close;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人中心 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link active" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">个人中心 / 账户概览</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>个人中心</h1><p>个人资料、套餐优惠、订单记录与积分流水统一管理。</p></div>
+  <div class="page-actions"><button class="btn btn-ghost btn-sm">刷新记录</button><button class="btn btn-primary btn-sm" href="billing.html">购买套餐</button></div>
+</div>
+<div style="display:grid;grid-template-columns:230px 1fr;gap:22px;align-items:start">
+  <div class="panel" style="margin:0">
+    <div class="panel-body" style="padding:12px">
+      <a class="side-link active" data-sec="overview" href="javascript:void 0">账户概览</a>
+      <a class="side-link" data-sec="profile" href="javascript:void 0">个人资料</a>
+      <a class="side-link" href="billing.html">套餐中心</a>
+      <a class="side-link" data-sec="coupons" href="javascript:void 0">我的优惠券</a>
+      <a class="side-link" data-sec="orders" href="javascript:void 0">订单记录</a>
+      <a class="side-link" data-sec="points" href="javascript:void 0">积分记录</a>
+      <a class="side-link" data-sec="consume" href="javascript:void 0">消费记录</a>
+      <a class="side-link" data-sec="referrals" href="javascript:void 0">邀请有礼</a>
+      <a class="side-link" data-sec="security" href="javascript:void 0">账户与安全</a>
+    </div>
+  </div>
+  <div id="profileContent">
+    <div class="stat-row compact" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
+      <div class="stat-card"><span class="k">当前套餐</span><b>免费版</b><span>升级获得更多权益</span></div>
+      <div class="stat-card"><span class="k">积分余额</span><b>975</b><span>今日 0 · 永久 975</span></div>
+      <div class="stat-card"><span class="k">充值订单</span><b>1</b><span>共 1 笔</span></div>
+      <div class="stat-card"><span class="k">积分流水</span><b>84</b><span>条记录</span></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>最近积分流水</h3><span class="act"><a class="btn btn-ghost btn-sm" href="#">更多记录 →</a></span></div>
+      <div class="table-wrap"><table class="tbl"><thead><tr><th>说明</th><th>类型</th><th>时间</th><th>变动</th><th>余额</th></tr></thead><tbody>
+        <tr><td>gpt-image-2 生成图片调用扣除</td><td>消费</td><td class="mono">2026/8/26 21:13</td><td style="color:#FF6B6B">-1</td><td class="mono">975</td></tr>
+        <tr><td>生成图片调用失败退回</td><td>退回</td><td class="mono">2026/8/26 20:57</td><td style="color:#12B886">+1</td><td class="mono">976</td></tr>
+        <tr><td>gpt-image-2 生成图片调用扣除</td><td>消费</td><td class="mono">2026/8/26 20:56</td><td style="color:#FF6B6B">-1</td><td class="mono">975</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h3>最近订单</h3><span class="act"><a class="btn btn-ghost btn-sm" href="billing.html">去购买 →</a></span></div>
+      <div class="table-wrap"><table class="tbl"><thead><tr><th>套餐</th><th>订单号</th><th>时间</th><th>金额</th><th>状态</th></tr></thead><tbody>
+        <tr><td><b>专业月卡</b></td><td class="mono">VZ202608260731431D264403</td><td class="mono">08/26 15:31</td><td>¥29.90</td><td><span class="badge badge-muted">已关闭</span></td></tr>
+      </tbody></table></div>
+    </div>
+  </div>
+</div></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+
+<script>(function(){
+    var panels={overview:'<h3 style="font-size:16px;margin-bottom:14px">账户概览</h3><div class="empty" style="border:1px dashed var(--line-2);border-radius:var(--radius-m)"><div class="t">概览数据</div><div class="s">积分流水与订单在这里汇总展示</div></div>',
+      profile:'<h3 style="font-size:16px;margin-bottom:14px">个人资料</h3><div class="field"><label>昵称</label><input class="input" value="fandy"></div><div class="field"><label>用户名</label><input class="input" value="@fandy2008"></div><button class="btn btn-primary btn-sm" onclick="toast(\'资料已保存\',\'ok\')">保存修改</button>',
+      coupons:'<h3 style="font-size:16px;margin-bottom:14px">我的优惠券</h3><div class="empty" style="border:1px dashed var(--line-2);border-radius:var(--radius-m)"><div class="t">暂无优惠券</div><div class="s">领取的优惠券会显示在这里</div></div>',
+      orders:'<h3 style="font-size:16px;margin-bottom:14px">订单记录</h3><div class="table-wrap"><table class="tbl"><thead><tr><th>套餐</th><th>订单号</th><th>金额</th><th>状态</th></tr></thead><tbody><tr><td><b>专业月卡</b></td><td class="mono">VZ202608260731431D264403</td><td>¥29.90</td><td><span class="badge badge-muted">已关闭</span></td></tr></tbody></table></div>',
+      points:'<h3 style="font-size:16px;margin-bottom:14px">积分记录</h3><div class="table-wrap"><table class="tbl"><thead><tr><th>说明</th><th>变动</th><th>余额</th></tr></thead><tbody><tr><td>gpt-image-2 生成扣除</td><td style="color:#FF6B6B">-1</td><td class="mono">975</td></tr><tr><td>失败退回</td><td style="color:#12B886">+1</td><td class="mono">976</td></tr></tbody></table></div>',
+      consume:'<h3 style="font-size:16px;margin-bottom:14px">消费记录</h3><div class="empty" style="border:1px dashed var(--line-2);border-radius:var(--radius-m)"><div class="t">暂无消费记录</div></div>',
+      referrals:'<h3 style="font-size:16px;margin-bottom:14px">邀请有礼</h3><div class="field"><label>我的邀请码</label><div style="display:flex;gap:10px"><input class="input" value="VOZ-FANDY" readonly><button class="btn btn-ghost btn-sm" onclick="toast(\'邀请码已复制\',\'ok\')">复制</button></div></div><div class="stat-row compact" style="grid-template-columns:repeat(3,1fr)"><div class="stat-card"><b>0</b><span>邀请点击</span></div><div class="stat-card"><b>0</b><span>成功注册</span></div><div class="stat-card"><b>0</b><span>首单奖励</span></div></div>',
+      security:'<h3 style="font-size:16px;margin-bottom:14px">账户与安全</h3><div class="field"><label>绑定邮箱</label><input class="input" placeholder="未绑定"></div><div class="field"><label>登录密码</label><div class="pw-wrap"><input class="input" type="password" value="password"><button type="button" class="pw-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div><button class="btn btn-primary btn-sm" onclick="toast(\'安全设置已保存\',\'ok\')">保存</button>'};
+    var host=document.getElementById('profileContent');
+    document.querySelectorAll('[data-sec]').forEach(function(a){a.addEventListener('click',function(){
+      document.querySelectorAll('[data-sec]').forEach(function(x){x.classList.remove('active');});a.classList.add('active');
+      host.innerHTML='<div class="panel-body">'+panels[a.dataset.sec]+'</div>';
+      toast('已切换到：'+a.textContent.trim(),'ok');
+    });});
+  })();</script>
+</body>
+</html>

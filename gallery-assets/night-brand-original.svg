@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">夜色中铜色圆环与几何立方体组成的品牌视觉</title>
+  <defs>
+    <linearGradient id="night" x2="1" y2="1">
+      <stop stop-color="#101e27"/>
+      <stop offset=".55" stop-color="#172c35"/>
+      <stop offset="1" stop-color="#3d3539"/>
+    </linearGradient>
+    <linearGradient id="metal" x2="1" y2="1">
+      <stop stop-color="#ffe2a9"/>
+      <stop offset=".4" stop-color="#aa7653"/>
+      <stop offset=".75" stop-color="#e0b87d"/>
+      <stop offset="1" stop-color="#805b50"/>
+    </linearGradient>
+    <linearGradient id="facet" x2="1" y2="1">
+      <stop stop-color="#e9c594"/>
+      <stop offset="1" stop-color="#86614b"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#night)" d="M0 0h800v600H0z"/>
+  <path fill="none" stroke="#78969c" stroke-width="1" opacity=".25" d="M-40 80 840 0M-40 172 840 92M-40 264 840 184M-40 356 840 276M-40 448 840 368M-40 540 840 460"/>
+  <circle cx="402" cy="295" r="193" fill="none" stroke="#5c6060" stroke-width="39" opacity=".5"/>
+  <circle cx="400" cy="285" r="193" fill="none" stroke="url(#metal)" stroke-width="18"/>
+  <circle cx="400" cy="285" r="157" fill="none" stroke="#e8bf8c" stroke-width="2" opacity=".65"/>
+  <path fill="#332e2c" opacity=".5" d="m400 198 132 72v135l-132 75-132-75V270z" transform="translate(13 18)"/>
+  <path fill="url(#facet)" d="m400 192 130 73-130 75-130-75z"/>
+  <path fill="#8f6a55" d="m270 265 130 75v148l-130-76z"/>
+  <path fill="#bc8d66" d="m530 265-130 75v148l130-76z"/>
+  <path fill="none" stroke="#ffe1a6" stroke-width="3" opacity=".8" d="m270 265 130 75 130-75M400 340v148"/>
+  <path fill="none" stroke="#d7b58c" stroke-width="2" opacity=".5" d="m326 234 130 75M344 309v146M469 304v139"/>
+  <circle cx="147" cy="139" r="3" fill="#e8c796"/>
+  <circle cx="622" cy="94" r="2" fill="#e8c796"/>
+  <circle cx="671" cy="354" r="3" fill="#e8c796"/>
+  <path fill="none" stroke="#a37961" stroke-width="2" opacity=".6" d="M105 450h135m320-282h135M605 478h70"/>
+</svg>

@@ -1,0 +1,27 @@
+# GoldCube-Gateway third-party and material review notice
+
+Updated 2026-09-25 for the proposed first public source snapshot. This is an
+inventory of distributed material and unresolved
+evidence, not a declaration that every license or publication right has been
+cleared. AGPL-3.0-only in NOTICE applies to GoldCube-owned source code; it
+does not relicense fonts, images, upstream code or other third-party material.
+Unresolved items continue to block publication of the affected candidate.
+
+| Material | Known source / applicable terms | Remaining work |
+| --- | --- | --- |
+| Separately deployed application resources forwarded/adapted by serve.js | csyqlz/VOZEB-PRO at 04b32d31ca00272e3866c85e9a8329036c63af72, the fixed old AGPL baseline, plus downstream changes in fandy20082008/GoldCube | Preserve original notices and application third-party terms; bind the actual application source and artifacts to every paired release. No newer upstream import is authorized by this notice. |
+| Node.js runtime | External runtime; serve.js uses built-in http, fs and path modules | Record the actual distributed runtime version and its license/third-party notices when a release includes it. No npm manifest does not mean no third-party materials exist. |
+| Fonts in this source snapshot | The 25 HTML pages use system font stacks; no Google Fonts request or font binary is included | Historical remote-font evidence remains in the private development records, outside this snapshot. Recheck actual built artifacts before release. |
+| 470 inline SVG instances in 25 HTML pages and app.js | A targeted check found geometric controls and no evident third-party brand symbol; individual design inputs and historical origins have not been established | Review grouped path geometry and its source; do not apply the own-code grant to unknown third-party graphics by assumption. |
+| logo.svg, icon.svg | Owner states these were created by the project, along with its own code, without copying commercial templates | Originality statement recorded; asset-specific publication/license review remains separate from the code license choice. |
+| gallery-assets/future-city-original.svg, incense-promo-original.svg, night-brand-original.svg | New geometric illustrations drawn in this repository from SVG primitives; no image service, external artwork, font, or reference asset used | Include these exact files in source and runtime inventories. Other graphics and release gates remain under review. |
+
+The 17 optional preview screenshots and three older gallery SVG illustrations
+are excluded from this proposed snapshot. Exclusion is a publication-scope
+decision, not a finding that these materials lack rights or an approval of the
+private development history. Three new homepage SVG illustrations replace the
+former AI-generated PNGs in the proposed source tree. Detailed rights
+and privacy evidence is held outside the public source snapshot. Before
+publication, resolve the retained material with verified source/version/license
+evidence and required original notices, or make an explicitly reviewed further
+scope change. The actual built artifact must match this inventory.

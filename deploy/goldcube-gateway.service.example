@@ -1,0 +1,16 @@
+[Unit]
+Description=GoldCube Gateway
+After=network.target
+
+[Service]
+Type=simple
+User={{SERVICE_USER}}
+Group={{SERVICE_GROUP}}
+WorkingDirectory={{CURRENT_DIR}}
+EnvironmentFile={{ENV_FILE}}
+ExecStart={{NODE_BIN}} {{CURRENT_DIR}}/serve.js
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

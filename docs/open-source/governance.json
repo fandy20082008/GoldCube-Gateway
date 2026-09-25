@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "repository": "fandy20082008/GoldCube-Gateway",
+  "applicationRepository": "fandy20082008/GoldCube",
+  "materials": [
+    {
+      "id": "proxy-shell-inline-svg",
+      "scope": "serve.js, app.js, redesign.css and 25 HTML pages including 470 inline SVG instances",
+      "source": "Owner-declared self-created proxy/shell; initial imports and SVG geometry origins not independently established",
+      "license": "unknown",
+      "status": "unknown",
+      "evidence": ""
+    },
+    {
+      "id": "retained-brand-assets",
+      "scope": "logo.svg and icon.svg",
+      "source": "Owner-declared original brand artwork; asset-specific publication review pending",
+      "license": "unknown",
+      "status": "unknown",
+      "evidence": ""
+    },
+    {
+      "id": "replacement-homepage-gallery-art",
+      "scope": "gallery-assets/future-city-original.svg, gallery-assets/incense-promo-original.svg, gallery-assets/night-brand-original.svg",
+      "source": "Self-authored SVG primitives in this repository; no external image service, font or reference artwork",
+      "license": "AGPL-3.0-only",
+      "status": "unknown",
+      "evidence": "Source files and homepage references in this development commit; independent release review pending"
+    }
+  ],
+  "sourceScope": {
+    "proxy": [
+      "serve.js"
+    ],
+    "shell": [
+      "app.js",
+      "redesign.css",
+      "announcements.html",
+      "assets.html",
+      "billing-cancel.html",
+      "billing-checkout.html",
+      "billing-success.html",
+      "billing.html",
+      "canvas-detail.html",
+      "canvas.html",
+      "community.html",
+      "create.html",
+      "drama-detail.html",
+      "drama.html",
+      "forgot-password.html",
+      "gallery.html",
+      "help.html",
+      "index.html",
+      "login.html",
+      "me.html",
+      "my-prompts.html",
+      "privacy.html",
+      "profile.html",
+      "prompts.html",
+      "register.html",
+      "terms.html",
+      "works.html"
+    ],
+    "assets": [
+      "logo.svg",
+      "icon.svg",
+      "gallery-assets/future-city-original.svg",
+      "gallery-assets/incense-promo-original.svg",
+      "gallery-assets/night-brand-original.svg"
+    ],
+    "deployment": [
+      "UNRESOLVED: safe deployment templates and complete live inventory required"
+    ]
+  },
+  "licenseFiles": [
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES"
+  ],
+  "reviews": {
+    "provenance": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "licenses": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "materials": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "secrets": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "sourceAccess": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "rebuild": {
+      "status": "unknown",
+      "evidence": ""
+    },
+    "deploymentInventory": {
+      "status": "unknown",
+      "evidence": ""
+    }
+  },
+  "release": {
+    "commit": "",
+    "sourceEntryUrl": "",
+    "archive": {
+      "url": "",
+      "sha256": "",
+      "localPath": "",
+      "verificationEvidence": ""
+    },
+    "artifacts": []
+  }
+}

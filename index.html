@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金立方 GoldCube — AI 创作工作台</title>
+<link rel="stylesheet" href="redesign.css">
+
+<style>
+/* 第 1 轮交叉验证补充：保留金立方皮肤，仅补原版首页交互语义 */
+.nav-action{appearance:none;background:transparent;border:0;cursor:pointer;font:inherit;font-size:14.5px;font-weight:500;color:var(--ink-2);padding:8px 13px;border-radius:9px;transition:color .2s,background .2s;white-space:nowrap}
+.nav-action:hover{color:var(--ink);background:var(--surface-2)}
+.mobile-menu-toggle{display:none}
+.mobile-nav{display:none}
+.cmd textarea{flex:1;min-width:0;min-height:58px;resize:none;padding:8px 0;font-family:var(--font-b);font-size:16px;line-height:1.5;background:none;border:0;outline:none;color:var(--ink)}
+.cmd textarea::placeholder{color:var(--ink-3)}
+.ref-assets{width:34px;height:34px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--line);border-radius:10px;color:var(--ink-2);background:var(--surface-2);transition:all .2s}
+.ref-assets:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-1px)}
+.ref-assets svg{width:17px;height:17px}
+.creation-modes{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin-top:14px}
+.creation-modes button{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 78%,transparent);color:var(--ink-2);font-size:13px;font-weight:600;transition:all .2s}
+.creation-modes button:hover{color:var(--ink);border-color:var(--line-2)}
+.creation-modes button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 5px 14px var(--glow)}
+.pricing-modal{max-width:860px!important;padding:0;overflow:hidden}
+.pricing-modal .modal-head{align-items:flex-start;padding-right:64px}
+.pricing-modal .modal-head .sub{margin-top:4px}
+.pricing-modal .modal-head .safe-note{margin-left:auto;display:flex;align-items:center;gap:6px;color:#159a6c;font-size:12px;font-weight:600;white-space:nowrap}
+.pricing-modal .modal-head .safe-note svg{width:16px;height:16px}
+.plan-choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.plan-choice{border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--surface);box-shadow:var(--shadow-sm);transition:transform .2s,border-color .2s,box-shadow .2s}
+.plan-choice:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:var(--shadow-md)}
+.plan-choice.hot{border-color:color-mix(in srgb,var(--accent) 50%,var(--line));box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 18%,transparent),var(--shadow-sm)}
+.plan-choice h4{display:flex;align-items:center;gap:8px;font-size:17px;margin:0}.plan-choice .recommend{font-size:11px;padding:3px 7px;border-radius:999px;color:var(--accent-ink);background:var(--accent)}
+.plan-choice .plan-sub{margin:7px 0 15px;color:var(--ink-2);font-size:13px;line-height:1.6;min-height:42px}
+.choice-price{display:flex;align-items:end;gap:5px;padding:14px 0;border-block:1px solid var(--line);margin-bottom:14px}.choice-price b{font-family:var(--font-d);font-size:29px;line-height:1}.choice-price span{font-size:13px;color:var(--ink-3)}
+.choice-points{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--ink-2);margin-bottom:12px}.choice-points svg{width:15px;color:var(--accent)}
+.plan-choice ul{list-style:none;margin:0 0 17px;padding:0;display:grid;gap:8px}.plan-choice li{display:flex;gap:8px;color:var(--ink-2);font-size:13px;line-height:1.45}.plan-choice li svg{width:15px;min-width:15px;color:var(--accent);margin-top:1px}
+.plan-choice [data-billing-plan-action]{width:100%;border:0;cursor:pointer}
+@media(max-width:960px){
+  .nav-inner{gap:12px;padding:0 18px}.nav-links{display:none}.nav-right .btn{display:none}.mobile-menu-toggle{display:grid}.mobile-nav{position:fixed;top:calc(var(--nav-h) - 4px);left:14px;right:14px;z-index:99;display:grid;gap:4px;padding:10px;border:1px solid var(--line);border-radius:14px;background:color-mix(in srgb,var(--surface) 94%,transparent);box-shadow:var(--shadow-lg);backdrop-filter:blur(18px);opacity:0;transform:translateY(-10px);visibility:hidden;pointer-events:none;transition:opacity .18s,transform .18s,visibility .18s}.mobile-nav.open{opacity:1;transform:none;visibility:visible;pointer-events:auto}.mobile-nav a,.mobile-nav button{padding:12px 13px;border:0;border-radius:10px;text-align:left;background:transparent;color:var(--ink);font:600 14px var(--font-b)}.mobile-nav a:hover,.mobile-nav button:hover{background:var(--surface-2)}
+  .cmd{align-items:flex-end;padding:12px}.cmd .spark{margin-bottom:11px}.cmd .go{padding:10px 13px}.cmd .go svg{display:none}.ref-assets{margin-bottom:5px}.hero-stats{margin-top:42px}.pricing-modal .modal-head .safe-note{display:none}.plan-choice-grid{grid-template-columns:1fr}
+}
+@media(max-width:560px){.brand{font-size:16px}.brand-mark{width:28px;height:28px}.cmd textarea{font-size:15px}.creation-modes{justify-content:flex-start}.creation-modes button{padding:6px 10px}.pricing-modal .modal-body{padding:16px}.plan-choice{padding:16px}}
+/* 2026-08-31：首页输入区按反馈收紧高度，移除按钮旁参考素材图标 */
+.input-3x .cmd{height:128px;min-height:128px;padding:24px 38px 24px 58px}
+.input-3x .cmd textarea{height:36px;min-height:36px;padding:4px 0}
+@media(max-width:960px){.input-3x .cmd{height:110px;min-height:110px;padding:22px 24px 22px 38px}}
+@media(max-width:600px){.input-3x .cmd{height:auto;min-height:110px;padding:22px 16px}.input-3x .cmd textarea{height:40px;min-height:40px}}
+</style>
+</head>
+<body>
+<!-- ======== Nav ======== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg>
+      </span>
+      金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span>
+    </a>
+    <div class="nav-links" aria-label="主导航">
+      <a class="nav-action" href="/login">创作 Agent</a>
+      <a class="nav-action" href="/login">短剧制作</a>
+      <a href="/gallery.html">作品广场</a>
+      <button class="nav-action" type="button" data-openpricing>价格方案</button>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeToggle" aria-label="切换到深色主题" title="切换主题">
+        <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+        <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="home-mobile-menu" aria-label="打开导航菜单" title="导航菜单"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <a class="btn btn-primary" href="/login">立即体验</a>
+    </div>
+  </div>
+</nav>
+<nav class="mobile-nav" id="home-mobile-menu" aria-label="移动端导航">
+  <a href="/login">创作 Agent →</a>
+  <a href="/login">短剧制作 →</a>
+  <a href="/gallery.html">作品广场 →</a>
+  <button type="button" data-openpricing>价格方案 →</button>
+</nav>
+
+<!-- ======== Hero ======== -->
+<header class="hero" id="top">
+  <div class="aurora"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+  <div class="particles" id="particles"></div>
+  <div class="container hero-inner">
+    <span class="eyebrow"><span class="dot"></span>AI 创作工作台 · 全新界面 v0.9</span>
+    <h1>从一句话，<span class="grad-text">到完整作品</span></h1>
+    <p class="hero-sub">图片、视频、音频、画布与短剧 —— 一个入口完成所有 AI 创作，让每个想法直接进入完整创作流程。</p>
+    <div class="cmd-wrap input-3x">
+      <div class="chips" id="chips">
+        <button class="chip" data-t="生成一张科幻城市概念图"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>科幻城市概念图</button>
+        <button class="chip" data-t="制作一段产品宣传视频"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>产品宣传视频</button>
+        <button class="chip" data-t="为电商产品生成详情页"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>电商详情页</button>
+        <button class="chip" data-t="创作一个短剧分镜脚本"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 16l2-6 3 4 3-8 4 10"/></svg>短剧分镜脚本</button>
+      </div>
+      <div class="creation-modes" role="group" aria-label="创作模式">
+        <button type="button" aria-label="智能模式" title="智能模式" aria-pressed="true">智能模式</button>
+        <button type="button" aria-label="AI 绘图" title="AI 绘图" aria-pressed="false">AI 绘图</button>
+        <button type="button" aria-label="AI 视频" title="AI 视频" aria-pressed="false">AI 视频</button>
+        <button type="button" aria-label="AI 音频" title="AI 音频" aria-pressed="false">AI 音频</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======== Product demo ======== -->
+<section class="section" id="product">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">The Workbench</div>
+      <h2>你的创作工作台，<span class="grad-text">为效率而生</span></h2>
+      <p>从 Agent 编排到画布协作，所有工具围绕一条创作主线组织，不再在多个软件之间来回搬运。</p>
+    </div>
+    <div class="demo-panel reveal">
+      <div class="demo-bar">
+        <span class="dotb r"></span><span class="dotb y"></span><span class="dotb g"></span>
+        <span class="title">goldcube · 创作工作台</span>
+      </div>
+      <div class="demo-body">
+        <div class="demo-side">
+          <div class="side-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M2 13l10 5 10-5"/></svg>创作</div>
+          <div class="side-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</div>
+          <div class="side-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</div>
+          <div class="side-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>资产</div>
+          <div class="side-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v6c0 4-3.4 6.7-8 8-4.6-1.3-8-4-8-8V7l8-4Z"/><path d="m9 12 2 2 4-4"/></svg>作品</div>
+        </div>
+        <div class="demo-main">
+          <div class="demo-top">
+            <span class="crumb">工作台 / 线香推广海报</span>
+            <span class="pill">● 生成中</span>
+          </div>
+          <div class="canvas-area">
+            <div class="grid-bg"></div>
+            <svg class="demo-streams" width="100%" height="100%" viewBox="0 0 800 400" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="streamGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="var(--accent)" stop-opacity="0"/>
+                  <stop offset=".5" stop-color="var(--accent)"/>
+                  <stop offset="1" stop-color="var(--accent-3)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M160 110 C 260 60, 320 120, 400 150"/>
+              <path d="M430 200 C 520 260, 560 180, 640 140"/>
+              <path d="M400 150 C 470 220, 560 250, 620 230"/>
+            </svg>
+            <div class="node n1 pulse"><div class="n-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>想法</div><div class="n-title">一句话创意</div><div class="n-sub">电商 · 香薰线香</div></div>
+            <div class="node n2 pulse"><div class="n-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.2"/></svg>生成</div><div class="n-title">gpt-image-2</div><div class="n-sub">主图 · 3 张备选</div></div>
+            <div class="node n3 pulse"><div class="n-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>发布</div><div class="n-title">小红书推广</div><div class="n-sub">封面 + 文案</div></div>
+            <div class="demo-chat">
+              <div class="c-head"><span style="color:var(--accent)">●</span> 画布助手</div>
+              <div class="c-msg">已根据「线香」主题生成 3 版主图，推荐 A 版更适合小红书信息流。</div>
+              <div class="typing"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Capabilities ======== -->
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Capabilities</div>
+      <h2>六种创作能力，<span class="grad-text">一条主线串联</span></h2>
+      <p>每个能力都足够专业，也都能被 Agent 编排进同一条创作流程。</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg></div><h3>AI 绘图</h3><p>文生图、图生图、参考图约束，支持电商、插画与品牌内容多种风格。</p><div class="c-meta">gpt-image-2 · Flux · 风格参考</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="card reveal reveal-d1"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div><h3>AI 视频</h3><p>文生视频、图生视频、数字人配音，一条提示词产出可投放的广告片。</p><div class="c-meta">10s 广告片 · 中文配音 · 分镜</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="card reveal reveal-d2"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg></div><h3>AI 音频</h3><p>配音、背景乐、音效生成与多轨合成，让成片自带声音。</p><div class="c-meta">中文配音 · BGM · 音效</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="card reveal"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></div><h3>Agent 编排</h3><p>把多步创作交给 Agent：策划、生成、复盘、迭代，全流程自动推进。</p><div class="c-meta">Skill · 自动复盘 · 多轮任务</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="card reveal reveal-d1"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div><h3>画布协作</h3><p>节点式画布组织创作素材，助手随行，随时回到最近的项目继续。</p><div class="c-meta">无限画布 · 画布助手 · 版本</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      <div class="card reveal reveal-d2"><div class="c-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M12 6v12"/></svg></div><h3>短剧制作</h3><p>从剧本到分镜再到成片导出剪映草稿，一条流水线完成短剧生产。</p><div class="c-meta">分镜 · 剪映草稿 · 成本预估</div><span class="c-go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Workflow ======== -->
+<section class="section" id="workflow" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">How It Works</div>
+      <h2>四步，<span class="grad-text">创意即刻落地</span></h2>
+      <p>每一步都围绕创作者的真实动作设计，从想法到发布不需要切换心智。</p>
+    </div>
+    <div class="steps reveal" id="steps">
+      <div class="rail"></div>
+      <div class="step"><div class="s-num">01</div><h3>选择场景</h3><p>电商、插画、短剧还是画布，明确创作类型与目标。</p></div>
+      <div class="step"><div class="s-num">02</div><h3>输入需求</h3><p>描述想法，上传参考素材，让 AI 理解你的方向。</p></div>
+      <div class="step"><div class="s-num">03</div><h3>生成内容</h3><p>多模态模型并行产出，实时预览，随时重试。</p></div>
+      <div class="step"><div class="s-num">04</div><h3>发布与分享</h3><p>一键发布作品，沉淀到个人主页与社区。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Gallery ======== -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Inspiration</div>
+      <h2>灵感作品展示</h2>
+      <p>探索创作者的作品，激发你的下一个创意。</p>
+    </div>
+    <div class="g-tags reveal">
+      <button class="on" type="button" aria-pressed="true">全部</button><button type="button" aria-pressed="false">视觉设计</button><button type="button" aria-pressed="false">插画</button><button type="button" aria-pressed="false">摄影</button><button type="button" aria-pressed="false">品牌内容</button><button type="button" aria-pressed="false">视频</button><button type="button" aria-pressed="false">短剧</button><button type="button" aria-pressed="false">其他</button>
+    </div>
+    <div class="gallery">
+      <div class="g-card reveal"><div class="g-img"><div class="art a1"><img class="gallery-art" src="/gallery-assets/future-city-original.svg" alt="层叠高楼与空中轨道构成的未来城市"><div class="shade"></div><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>科幻城市</span></div></div><div class="g-body"><div><div class="t">未来都市概念图</div><div class="m">原创插画 · 城市</div></div></div></div>
+      <div class="g-card reveal reveal-d1"><div class="g-img"><div class="art a2"><img class="gallery-art" src="/gallery-assets/incense-promo-original.svg" alt="暖色空间中的线香、香座与缭绕烟雾"><div class="shade"></div><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>电商</span></div></div><div class="g-body"><div><div class="t">线香推广海报</div><div class="m">原创插画 · 品牌内容</div></div></div></div>
+      <div class="g-card reveal reveal-d2"><div class="g-img"><div class="art a3"><img class="gallery-art" src="/gallery-assets/night-brand-original.svg" alt="夜色中铜色圆环与几何立方体组成的品牌视觉"><div class="shade"></div><span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.4 1 2.3h6c0-.9.4-1.8 1-2.3A7 7 0 0 0 12 2Z"/></svg>品牌</span></div></div><div class="g-body"><div><div class="t">暗夜品牌视觉</div><div class="m">原创插画 · 品牌内容</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Pricing ======== -->
+<section class="section" id="pricing" style="background:var(--surface-2)">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="kicker">Pricing</div>
+      <h2>选择适合你的<span class="grad-text">创作方案</span></h2>
+      <p>价格、积分与权益统一管理，随时升级，即买即用。</p>
+    </div>
+    <div class="plans">
+      <div class="plan reveal">
+        <div class="p-name">免费版</div>
+        <div class="p-price"><b>¥0</b><span>/ 永久</span></div>
+        <p class="p-desc">体验核心创作能力，适合偶尔创作的个人用户。</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>每日免费创作积分</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>全部模态基础能力</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>作品发布与社区</li>
+        </ul>
+        <a class="btn btn-ghost" href="/login">开始使用</a>
+      </div>
+      <div class="plan hot reveal reveal-d1">
+        <div class="p-name">创作者月卡<span class="p-badge">热门</span></div>
+        <div class="p-price"><b>¥9.90</b><span>/ 月</span></div>
+        <p class="p-desc">适合个人创作者持续使用生图、视频与提示词工作流。</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>500 创作积分 / 月</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>全部模态 + Agent 编排</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>商业项目交付授权</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>30 天完整套餐权益</li>
+        </ul>
+        <a class="btn btn-primary" href="/login">立即订阅</a>
+      </div>
+      <div class="plan reveal reveal-d2">
+        <div class="p-name">专业月卡</div>
+        <div class="p-price"><b>¥29.90</b><span>/ 月</span></div>
+        <p class="p-desc">适合高频创作、团队试运营与商业项目交付。</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>2,000 创作积分 / 月</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>全部创作能力 + 优先队列</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>短剧生产完整流水线</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>团队协作与导出</li>
+        </ul>
+        <a class="btn btn-ghost" href="/login">联系升级</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CTA ======== -->
+<section class="section" style="padding-top:40px">
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>准备好开始你的第一个创作了吗？</h2>
+      <p>免费注册，立即体验从一句话到完整作品的完整流程。</p>
+      <a class="btn" href="/login">
+        免费开始创作
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== Footer ======== -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="/"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方 GoldCube</a>
+        <p>面向 Agent、图片、视频、画布与短剧生产的一体化 AI 创作工作台。</p>
+      </div>
+      <div class="foot-col"><h4>产品</h4><a href="#">AI 绘图</a><a href="#">AI 视频</a><a href="#">AI 音频</a><a href="#">画布</a><a href="#">短剧制作</a></div>
+      <div class="foot-col"><h4>资源</h4><a href="/gallery.html">作品广场</a><a href="/prompts.html">提示词库</a><a href="/help.html">帮助中心</a><a href="/open-source">License &amp; Source</a><a href="/announcements.html">公告</a><a href="/terms.html">服务条款</a></div>
+      <div class="foot-col"><h4>公司</h4><a href="/terms.html">服务条款</a><a href="/privacy.html">隐私政策</a><a href="login.html">登录</a><a href="/register.html">注册</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span style="min-width:0;display:grid;gap:8px">© 2026 金立方 GoldCube.
+        <span lang="en">GoldCube-owned source code: AGPL-3.0-only. Third-party materials remain subject to their respective terms.</span>
+        <span lang="en" style="display:flex;flex-wrap:wrap;gap:4px 8px;line-height:1.8">
+          <span>Main application: <a href="https://github.com/csyqlz/VOZEB-PRO/blob/04b32d31ca00272e3866c85e9a8329036c63af72/LICENSE" target="_blank" rel="noreferrer" style="text-decoration:underline">GNU AGPLv3</a></span>
+          <span aria-hidden="true">·</span><a href="/open-source" style="text-decoration:underline">License &amp; Source</a>
+          <span aria-hidden="true">·</span><span>GitHub: <a href="https://github.com/fandy20082008/GoldCube" target="_blank" rel="noreferrer" style="text-decoration:underline">GoldCube</a></span>
+          <span aria-hidden="true">·</span><a href="https://github.com/fandy20082008/GoldCube-Gateway" target="_blank" rel="noreferrer" style="text-decoration:underline">GoldCube-Gateway</a>
+        </span>
+      </span>
+      <span class="lang"><span>简体中文</span><a href="#">English</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="overlay" id="pricingOv" aria-hidden="true">
+  <section class="modal wide pricing-modal" role="dialog" aria-modal="true" aria-labelledby="pricingTitle">
+    <div class="modal-head"><div><h3 id="pricingTitle">升级创作套餐</h3><span class="sub">选择方案后进入安全结算</span></div><span class="safe-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><circle cx="12" cy="12" r="9"/></svg>支付成功自动到账</span><button class="close" type="button" aria-label="关闭套餐选择" title="关闭"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body"><div class="plan-choice-grid">
+      <article class="plan-choice hot"><h4>创作者月卡 <span class="recommend">推荐</span></h4><p class="plan-sub">适合个人创作者持续使用生图、视频和提示词工作流，包含创作者版权益与积分包。</p><div class="choice-price"><b>¥9.90</b><span>/ 月</span></div><div class="choice-points"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>500 积分</div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>图片、视频、音频与 Agent 创作</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>适用于个人创作与商业项目交付</li></ul><button class="btn btn-primary" type="button" data-billing-plan-action="true" data-plan="creator-monthly">选择套餐</button></article>
+      <article class="plan-choice"><h4>专业月卡</h4><p class="plan-sub">适合高频创作、团队试运营和商业项目交付，包含专业版权益与更高积分包。</p><div class="choice-price"><b>¥29.90</b><span>/ 月</span></div><div class="choice-points"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>2,000 积分</div><ul><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>图片、视频、音频与 Agent 创作</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>适用于个人创作与商业项目交付</li></ul><button class="btn btn-primary" type="button" data-billing-plan-action="true" data-plan="pro-monthly">选择套餐</button></article>
+    </div></div>
+  </section>
+</div>
+
+<script>
+// ===== Theme (default light, toggle dark) =====
+(function(){
+  const root = document.documentElement;
+  const sun = document.getElementById('iconSun');
+  const moon = document.getElementById('iconMoon');
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('goldcube-theme');
+  const isDark = saved ? saved === 'dark' : false; // default light
+  function apply(dark){
+    root.classList.toggle('dark', dark);
+    sun.style.display = dark ? 'none' : 'block';
+    moon.style.display = dark ? 'block' : 'none';
+    btn.setAttribute('aria-label', dark ? '切换到浅色主题' : '切换到深色主题');
+    localStorage.setItem('goldcube-theme', dark ? 'dark' : 'light');
+  }
+  apply(isDark);
+  btn.addEventListener('click', () => apply(!root.classList.contains('dark')));
+})();
+
+// ===== Nav shadow / mobile menu =====
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), {passive:true});
+(function(){
+  const toggle=document.getElementById('mobileMenuToggle'), menu=document.getElementById('home-mobile-menu');
+  const close=()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','打开导航菜单');};
+  if(!toggle||!menu)return;
+  toggle.addEventListener('click',()=>{const open=!menu.classList.contains('open');menu.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'关闭导航菜单':'打开导航菜单');});
+  menu.addEventListener('click',e=>{if(e.target.closest('a,button')) close();});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+document.querySelectorAll('[data-openpricing]').forEach(btn=>btn.addEventListener('click',()=>window.openModal('pricingOv')));
+document.querySelectorAll('[data-billing-plan-action]').forEach(btn=>btn.addEventListener('click',()=>{window.closeModal('pricingOv');location.href='/login';}));
+
+// ===== Reveal on scroll =====
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ===== Steps rail draws when visible =====
+const stepsBox = document.getElementById('steps');
+if (stepsBox) {
+  const so = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { stepsBox.classList.add('done'); so.disconnect(); } });
+  }, { threshold: .3 });
+  so.observe(stepsBox);
+}
+
+
+// ===== Card spotlight =====
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('pointermove', (e) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+  });
+});
+
+// ===== ⌘K focuses input =====
+addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); input.focus(); }
+});
+
+// ===== Hero ambient particles =====
+(function(){
+  const p = document.getElementById('particles');
+  if(!p) return;
+  const frag = document.createDocumentFragment();
+  const n = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 26;
+  for(let i=0;i<n;i++){
+    const s = document.createElement('i');
+    const size = (2 + Math.random()*4).toFixed(1);
+    s.style.cssText = 'left:'+(Math.random()*100).toFixed(1)+'%;width:'+size+'px;height:'+size+'px;--po:'+(0.18+Math.random()*0.4).toFixed(2)+';--px:'+(Math.random()*70-35).toFixed(0)+'px;animation-duration:'+(9+Math.random()*14).toFixed(1)+'s;animation-delay:'+(-Math.random()*22).toFixed(1)+'s';
+    frag.appendChild(s);
+  }
+  p.appendChild(frag);
+})();
+
+// ===== Mascot reactions =====
+(function(){
+  const mascot = document.getElementById('mascot');
+  const input = document.getElementById('cmdInput');
+  if(!mascot || !input) return;
+  const cheer = () => { mascot.classList.remove('happy'); void mascot.offsetWidth; mascot.classList.add('happy'); setTimeout(()=>mascot.classList.remove('happy'), 1300); };
+  input.addEventListener('focus', () => mascot.classList.add('typing'));
+  input.addEventListener('blur', () => mascot.classList.remove('typing'));
+  input.addEventListener('input', () => { if(!mascot.classList.contains('typing')) mascot.classList.add('typing'); });
+  document.getElementById('cmdGo').addEventListener('click', cheer);
+  document.getElementById('chips').addEventListener('click', (e)=>{ if(e.target.closest('.chip')) cheer(); });
+})();
+
+
+// ===== Mascot hover: eyes track pointer + body micro-motion =====
+(function(){
+  const mascot = document.getElementById('mascot');
+  if(!mascot) return;
+  if(!matchMedia('(pointer:fine)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const eyeMax = 2.8, bodyMax = 3.2, rotMax = 4;
+  mascot.addEventListener('pointermove', (e)=>{
+    const r = mascot.getBoundingClientRect();
+    const cx = r.left + r.width/2, cy = r.top + r.height/2;
+    const dx = e.clientX - cx, dy = e.clientY - cy;
+    const len = Math.hypot(dx, dy) || 1;
+    const amt = Math.min(1, len / 70);
+    const nx = dx/len, ny = dy/len;
+    mascot.style.setProperty('--ex', (nx*eyeMax*amt).toFixed(2));
+    mascot.style.setProperty('--ey', (ny*eyeMax*amt).toFixed(2));
+    mascot.style.setProperty('--bx', (nx*bodyMax*amt).toFixed(2));
+    mascot.style.setProperty('--by', (ny*bodyMax*.65*amt).toFixed(2));
+    mascot.style.setProperty('--br', (nx*rotMax*amt).toFixed(2));
+    if(!mascot.classList.contains('hover')) mascot.classList.add('hover');
+  }, {passive:true});
+  mascot.addEventListener('pointerleave', ()=>{
+    mascot.classList.remove('hover');
+    ['--ex','--ey','--bx','--by','--br'].forEach(v=>mascot.style.removeProperty(v));
+  });
+})();
+
+// ===== Parallax aurora (pointer fine + no reduced motion) =====
+(function(){
+  const hero = document.querySelector('.hero');
+  if(!hero) return;
+  if(!matchMedia('(pointer:fine)').matches) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  hero.classList.add('parallax');
+  hero.addEventListener('pointermove', (e)=>{
+    const r = hero.getBoundingClientRect();
+    hero.style.setProperty('--px', (((e.clientX - r.left)/r.width - .5)*22).toFixed(1));
+    hero.style.setProperty('--py', (((e.clientY - r.top)/r.height - .5)*14).toFixed(1));
+  }, {passive:true});
+})();
+
+</script>
+<script src="app.js"></script>
+</body>
+</html>

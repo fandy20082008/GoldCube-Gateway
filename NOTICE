@@ -1,0 +1,34 @@
+GoldCube-Gateway
+© 2026 金立方 GoldCube.
+
+GoldCube-owned source code in this repository is licensed under the GNU
+Affero General Public License, version 3 only (SPDX: AGPL-3.0-only).
+See LICENSE for the complete, unmodified license text. This choice was
+expressly confirmed by the project owner on 2026-09-22 and does not change
+the license of upstream code or third-party materials.
+
+This repository contains the GoldCube brand shell and Node HTTP gateway.
+It serves local pages, bridges APIs, forwards application resources, and
+adapts application pages with brand DOM/CSS and URL rewriting. It operates
+with the separately maintained GoldCube application, based on:
+  https://github.com/csyqlz/VOZEB-PRO
+  commit 04b32d31ca00272e3866c85e9a8329036c63af72 (old AGPL baseline)
+The application repository is:
+  https://github.com/fandy20082008/GoldCube
+The gateway repository is:
+  https://github.com/fandy20082008/GoldCube-Gateway
+
+Upstream and third-party copyright, license and attribution notices remain
+applicable to their respective material, including application HTML, JS and
+CSS forwarded or adapted by the gateway. Gateway licensing does not replace
+those notices. Consult THIRD_PARTY_NOTICES for the known review scope and
+remaining evidence gaps. This notice does not approve unreviewed assets or
+grant rights that the project owner does not hold.
+
+GoldCube is a downstream project, not a claim of official affiliation with
+VOZEB-PRO or its authors. This notice grants no trademark rights. It does not
+add restrictions to the permissions granted by the applicable licenses.
+
+Each release must identify both repositories' exact commits, source archive
+hashes and actual artifacts in its release manifest. Repository links alone
+do not identify complete corresponding source for a running version.

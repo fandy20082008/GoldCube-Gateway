@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>短剧 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link active" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">短剧 / 项目列表</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>短剧</h1><p>从剧本到分镜再到剪映草稿，一条流水线完成短剧生产。</p></div>
+  <div class="page-actions"><button class="btn btn-primary btn-sm" data-modal="newDramaOv">新建短剧</button></div>
+</div>
+<div class="stat-row compact">
+  <div class="stat-card"><span class="k">短剧项目</span><b>2</b><span>进行中 1</span></div>
+  <div class="stat-card"><span class="k">分镜数</span><b>36</b><span>全部项目累计</span></div>
+  <div class="stat-card"><span class="k">导出草稿</span><b>1</b><span>剪映草稿</span></div>
+  <div class="stat-card"><span class="k">累计成本</span><b>¥0.00</b><span>当前项目</span></div>
+</div>
+<div class="grid3">
+  <div class="item-card"><div class="item-thumb"><div class="art a2"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">线香 10s 广告片 <span class="badge badge-ok">生成中</span></div><div class="m">16 分镜 · 中文配音 · 08/27</div></div></div>
+  <div class="item-card"><div class="item-thumb"><div class="art a3"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">品牌短剧 · 试播集</div><div class="m">20 分镜 · 已导出剪映 · 08/25</div></div></div>
+  <div class="item-card" style="border-style:dashed;display:grid;place-items:center;min-height:150px;cursor:pointer">
+    <div style="text-align:center;color:var(--ink-3)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 8px"><path d="M12 5v14M5 12h14"/></svg><div class="t" style="font-size:14px;font-weight:600" data-modal="newDramaOv">新建短剧</div></div>
+  </div>
+</div>
+<div class="panel" style="margin-top:22px">
+  <div class="panel-head"><h3>制作流水线</h3><span class="sub">每个项目按这条链路推进</span></div>
+  <div class="panel-body">
+    <div class="steps" style="grid-template-columns:repeat(4,1fr);margin-top:8px"><div class="rail" style="width:84%"></div>
+      <div class="step"><div class="s-num">01</div><h3>剧本分析</h3><p>导入剧本，Agent 拆解角色与场景。</p></div>
+      <div class="step"><div class="s-num">02</div><h3>分镜生成</h3><p>自动产出分镜脚本与参考图。</p></div>
+      <div class="step"><div class="s-num">03</div><h3>视频合成</h3><p>逐镜生成视频与配音。</p></div>
+      <div class="step"><div class="s-num">04</div><h3>导出剪映</h3><p>一键导出可编辑的剪映草稿。</p></div>
+    </div>
+  </div>
+</div></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+<div class="overlay" id="newDramaOv">
+  <div class="modal">
+    <div class="modal-head"><h3>新建短剧</h3><span class="sub">从剧本开始，Agent 帮你拆解分镜</span><button class="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body">
+      <div class="field"><label>项目名称</label><input class="input" id="dnName" placeholder="例如：品牌短剧 · 试播集"></div>
+      <div class="field"><label>剧本内容</label><textarea class="textarea" id="dnScript" placeholder="粘贴剧本或一句话描述故事…"></textarea></div>
+      <div class="field"><label>目标时长</label><div class="seg" style="width:100%"><button class="on">10s</button><button>30s</button><button>60s</button><button>自定义</button></div></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-ghost btn-sm" onclick="closeModal('newDramaOv')">取消</button><button class="btn btn-primary btn-sm" id="dnCreate">创建项目</button></div>
+  </div>
+</div>
+<script>(function(){document.getElementById('dnCreate').addEventListener('click',async function(){var n=document.getElementById('dnName').value.trim()||'未命名短剧';var script=document.getElementById('dnScript').value.trim();var b=this;b.disabled=true;b.textContent='创建中…';try{var r=await window.gcApi.createDrama({title:n,summary:script.slice(0,240),style:'cinematic',ratio:'16:9',initialScript:script});var project=r&&r.data&&r.data.project;if(!project)throw new Error('创建短剧失败');closeModal('newDramaOv');toast('短剧项目已创建：'+(project.title||n),'ok');setTimeout(function(){location.href='drama-detail.html?id='+encodeURIComponent(project.id);},500);}catch(e){toast(e.message||'创建短剧失败','error');}finally{b.disabled=false;b.textContent='创建项目';}});})();</script>
+
+</body>
+</html>

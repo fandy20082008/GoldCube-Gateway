@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">层叠高楼与空中轨道构成的未来城市</title>
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#102438"/>
+      <stop offset=".58" stop-color="#376486"/>
+      <stop offset="1" stop-color="#e5a17e"/>
+    </linearGradient>
+    <linearGradient id="tower" x2="1" y2="1">
+      <stop stop-color="#37728c"/>
+      <stop offset=".48" stop-color="#193d59"/>
+      <stop offset="1" stop-color="#102434"/>
+    </linearGradient>
+    <pattern id="windows" width="23" height="29" patternUnits="userSpaceOnUse">
+      <path d="M7 7h4v11H7zm10 0h3v11h-3z" fill="#aee7d6" opacity=".55"/>
+    </pattern>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h800v600H0z"/>
+  <circle cx="625" cy="142" r="68" fill="#eac2a1" opacity=".8"/>
+  <path fill="#abc6c2" opacity=".25" d="M0 345 140 262l113 51 110-69 134 95 120-74 183 80v255H0z"/>
+  <path fill="#13364e" d="M0 380h70V260l74-32 69 32v120h34V176l76-43 79 43v204h55V233l54-29 56 29v147h34V282l75-36 80 36v98h44v220H0z"/>
+  <path fill="url(#tower)" d="M65 260h155v340H65zM238 176h165v424H238zM445 232h126v368H445zM604 282h160v318H604z"/>
+  <path fill="url(#windows)" d="M75 271h134v320H75zM250 187h141v404H250zM457 245h103v346H457zM616 294h137v297H616z"/>
+  <path fill="#8bd5ca" opacity=".8" d="M64 255h156v5H64zM237 171h166v5H237zM444 228h128v4H444zM603 278h162v4H603z"/>
+  <path fill="none" stroke="#c4ece4" stroke-width="6" opacity=".8" d="M-30 427Q250 315 505 396T830 371"/>
+  <path fill="none" stroke="#102b3e" stroke-width="27" d="M-30 452Q250 340 505 421T830 396"/>
+  <path fill="none" stroke="#6ac4c3" stroke-width="3" d="M-30 438Q250 326 505 407T830 382"/>
+  <path fill="#f1e3b9" d="m372 351 42 8 14 13-11 5-51-5-10-12z"/>
+  <path fill="#193c4e" d="M0 516q235-72 430 13t370-46v117H0z"/>
+  <path fill="none" stroke="#78c5c4" stroke-width="3" opacity=".6" d="M0 550q240-75 430 13t370-48"/>
+</svg>

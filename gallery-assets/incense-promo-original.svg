@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title">
+  <title id="title">暖色空间中的线香、香座与缭绕烟雾</title>
+  <defs>
+    <linearGradient id="wall" x2="1" y2="1">
+      <stop stop-color="#e1d5bd"/>
+      <stop offset="1" stop-color="#ad785b"/>
+    </linearGradient>
+    <linearGradient id="table" x2="0" y2="1">
+      <stop stop-color="#85634b"/>
+      <stop offset="1" stop-color="#3e3c36"/>
+    </linearGradient>
+    <linearGradient id="vase" x2="1" y2="1">
+      <stop stop-color="#e5c8a1"/>
+      <stop offset=".55" stop-color="#9c714f"/>
+      <stop offset="1" stop-color="#624d40"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#wall)" d="M0 0h800v600H0z"/>
+  <circle cx="126" cy="100" r="210" fill="#fff0ce" opacity=".35"/>
+  <path fill="#dcc6a4" opacity=".55" d="M498 0h302v412H498z"/>
+  <path fill="#604d3d" opacity=".17" d="m487 0 150 0-123 407-94 0z"/>
+  <path fill="#4f5c43" opacity=".55" d="M702 351q-45-121-35-243 64 66 35 243Zm18 13q4-123 76-203-2 115-76 203Z"/>
+  <path fill="#566148" opacity=".7" d="M680 388q-96-55-122-154 86 24 122 154Zm48-20q32-77 72-97v99z"/>
+  <path fill="url(#table)" d="M0 422h800v178H0z"/>
+  <path fill="none" stroke="#c5a184" stroke-width="2" opacity=".45" d="M0 435h800M58 485h700M0 560h800"/>
+  <ellipse cx="382" cy="493" rx="205" ry="33" fill="#292b2a" opacity=".25"/>
+  <path fill="url(#vase)" d="M216 435q5-45 24-78 33-34 23-77h168q-10 43 22 77 19 33 24 78 0 42-130 45-131-3-131-45z"/>
+  <ellipse cx="347" cy="279" rx="84" ry="14" fill="#654d3f"/>
+  <ellipse cx="347" cy="275" rx="73" ry="8" fill="#392e2b"/>
+  <path fill="none" stroke="#392e2b" stroke-width="6" stroke-linecap="round" d="M346 282 367 91"/>
+  <circle cx="367" cy="91" r="4" fill="#eaab77"/>
+  <path fill="none" stroke="#f8ead6" stroke-width="5" opacity=".72" stroke-linecap="round" d="M367 86q-39-32 8-65 37-30-5-66"/>
+  <path fill="none" stroke="#fff4e5" stroke-width="2" opacity=".75" d="M377 105q40-38 17-78-13-23 18-48"/>
+  <path fill="#ece0c7" opacity=".75" d="M81 425q24-28 58-44 18-6 33-3-6 31-56 46z"/>
+  <path fill="#c6a886" opacity=".75" d="M84 429q38 0 78-12l24 17-93 9z"/>
+  <path fill="none" stroke="#dec49f" stroke-width="3" opacity=".8" d="M97 428q30-6 58-19"/>
+</svg>

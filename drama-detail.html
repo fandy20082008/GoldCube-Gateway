@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>短剧详情 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link active" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">短剧 / 线香 10s 广告片</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>线香 10s 广告片</h1><p>16 分镜 · 中文配音 · 成本预估</p></div>
+  <div class="page-actions"><button class="btn btn-ghost btn-sm">分析剧本</button><button class="btn btn-primary btn-sm">导出剪映草稿</button></div>
+</div>
+<div class="stat-row compact">
+  <div class="stat-card"><span class="k">分镜数</span><b>16</b><span>已完成 14</span></div>
+  <div class="stat-card"><span class="k">视频任务</span><b>14</b><span>成功</span></div>
+  <div class="stat-card"><span class="k">配音</span><b>中文</b><span>已生成</span></div>
+  <div class="stat-card"><span class="k">累计成本</span><b>¥0.00</b><span>当前项目</span></div>
+</div>
+<div class="panel"><div class="panel-head"><h3>分镜时间线</h3><span class="act"><span class="badge badge-ok">14/16 已完成</span></span></div>
+  <div class="panel-body"><div class="grid4" style="grid-template-columns:repeat(4,1fr)"><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a1"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 01</div><div class="m">00:00</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a2"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 02</div><div class="m">00:01</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a3"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 03</div><div class="m">00:02</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a4"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 04</div><div class="m">00:03</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a5"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 05</div><div class="m">00:04</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a6"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 06</div><div class="m">00:05</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a1"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">已完成</span></div><div class="item-body"><div class="t">分镜 07</div><div class="m">00:06</div></div></div><div class="item-card" data-modal="shotOv"><div class="item-thumb" style="aspect-ratio:16/9"><div class="art a2"></div><span class="badge badge-ok" style="position:absolute;left:10px;top:10px">生成中</span></div><div class="item-body"><div class="t">分镜 08</div><div class="m">生成中</div></div></div></div></div></div>
+<div class="overlay" id="shotOv"><div class="modal wide" style="max-width:720px"><div class="modal-head"><h3>分镜 01</h3><span class="sub mono">00:00 · 已完成</span><button class="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="modal-body" style="padding:18px"><div class="art a2" style="aspect-ratio:16/9;border-radius:12px"></div><div class="m" style="margin-top:12px;font-size:12.5px;color:var(--ink-2)">近景特写线香点燃，烟雾缓缓升起，暖光氛围。</div></div><div class="modal-foot"><button class="btn btn-ghost btn-sm" onclick="toast('已重新生成该分镜','ok')">重新生成</button><button class="btn btn-primary btn-sm" onclick="toast('配音已同步','ok')">同步配音</button></div></div></div></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>

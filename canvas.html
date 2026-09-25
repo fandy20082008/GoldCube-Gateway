@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画布 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link active" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">画布 / 全部项目</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>画布</h1><p>节点式画布组织创作素材，助手随行，随时回到最近的项目。</p></div>
+  <div class="page-actions">
+    <button class="btn btn-ghost btn-sm">导入画布</button>
+    <button class="btn btn-primary btn-sm" data-modal="newCanvasOv">新建画布</button>
+  </div>
+</div>
+<div class="stat-row compact">
+  <div class="stat-card"><span class="k">画布项目</span><b>4</b><span>共 220 个节点</span></div>
+  <div class="stat-card"><span class="k">最近编辑</span><b>08/27</b><span>今天 21:20</span></div>
+  <div class="stat-card"><span class="k">运行中任务</span><b>1</b><span>gpt-image-2 生成</span></div>
+  <div class="stat-card"><span class="k">助手会话</span><b>6</b><span>历史 1 · 新建 2</span></div>
+</div>
+<div class="panel">
+  <div class="panel-head"><h3>全部项目</h3><span class="sub">最近编辑优先</span><span class="act"><button class="btn btn-ghost btn-sm">筛选</button></span></div>
+  <div class="panel-body">
+    <div class="grid3">
+      <a class="item-card" href="canvas-detail.html" style="display:block"><div class="item-thumb"><div class="art a3"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">金立方 GoldCube 画布 3 <span class="badge badge-ok">编辑中</span></div><div class="m">6 个节点 · 7 条连线 · 08/27</div></div></div>
+      <div class="item-card"><div class="item-thumb"><div class="art a1"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">金立方 GoldCube 画布 4 <span class="badge badge-info">草稿</span></div><div class="m">40 个节点 · 0 条连线 · 08/26</div></div></div>
+      <div class="item-card"><div class="item-thumb"><div class="art a5"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">金立方 GoldCube 画布 2</div><div class="m">36 个节点 · 7 条连线 · 08/25</div></div></div>
+      <div class="item-card"><div class="item-thumb"><div class="art a6"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">金立方 GoldCube 画布 1</div><div class="m">122 个节点 · 27 条连线 · 08/24</div></div></div>
+      <div class="item-card" style="border-style:dashed;display:grid;place-items:center;min-height:150px;cursor:pointer">
+        <div style="text-align:center;color:var(--ink-3)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 8px"><path d="M12 5v14M5 12h14"/></svg><div class="t" style="font-size:14px;font-weight:600" data-modal="newCanvasOv">新建画布</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel collapsible collapsed" id="runTasksPanel">
+  <div class="panel-head" style="cursor:pointer" onclick="toggleCollapse('runTasksPanel')">
+    <h3>运行任务</h3><span class="act"><span class="badge badge-warn">● 1 运行中</span><span class="collapse-caret">▾</span></span>
+  </div>
+  <div class="table-wrap"><table class="tbl"><thead><tr><th>任务</th><th>类型</th><th>状态</th><th>进度</th><th>时间</th><th></th></tr></thead><tbody>
+    <tr><td><b>线香推广海报 · 主图</b></td><td>gpt-image-2</td><td><span class="badge badge-warn">运行中</span></td><td><div style="width:120px;height:6px;border-radius:6px;background:var(--surface-2);overflow:hidden"><div style="width:47%;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--accent),var(--accent-2))"></div></div></td><td class="mono">08/27 21:20</td><td><button class="btn btn-ghost btn-sm">查看</button></td></tr>
+  </tbody></table></div>
+</div></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+<div class="overlay" id="newCanvasOv">
+  <div class="modal">
+    <div class="modal-head"><h3>新建画布</h3><span class="sub">从一个空白画布开始</span><button class="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body">
+      <div class="field"><label>画布名称</label><input class="input" id="cnName" placeholder="例如：小红书线香推广"></div>
+      <div class="field"><label>模板</label><div class="seg" style="width:100%"><button class="on">空白画布</button><button>创作模板</button><button>从截图导入</button></div></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-ghost btn-sm" onclick="closeModal('newCanvasOv')">取消</button><button class="btn btn-primary btn-sm" id="cnCreate">创建画布</button></div>
+  </div>
+</div>
+<script>(function(){document.getElementById('cnCreate').addEventListener('click',async function(){var n=document.getElementById('cnName').value.trim()||'未命名画布';var b=this;b.disabled=true;b.textContent='创建中…';try{var r=await window.gcApi.createCanvas({title:n});var project=r&&r.data&&r.data.project;if(!project)throw new Error('创建画布失败');closeModal('newCanvasOv');toast('已创建画布：'+(project.title||n),'ok');setTimeout(function(){location.href='canvas-detail.html?id='+encodeURIComponent(project.id);},500);}catch(e){toast(e.message||'创建画布失败','error');}finally{b.disabled=false;b.textContent='创建画布';}});})();</script>
+
+</body>
+</html>

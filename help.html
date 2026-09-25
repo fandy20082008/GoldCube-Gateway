@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帮助中心 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link active" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">帮助中心</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>帮助中心</h1><p>快速上手、常见问题与使用文档。</p></div>
+  <div class="page-actions"><div class="tb-search" style="width:300px;margin:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索帮助文档…"></div></div>
+</div>
+<div class="grid3">
+  <div class="item-card" style="padding:24px"><div style="width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3"/></svg></div><h3 style="font-size:17px">快速上手</h3><p style="font-size:13.5px;color:var(--ink-2);margin-top:8px">5 分钟了解工作台、画布与 Agent 的基本用法。</p><a class="btn btn-ghost btn-sm" style="margin-top:16px" href="#">阅读文档</a></div>
+  <div class="item-card" style="padding:24px"><div style="width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--accent-2),var(--accent-3));color:#fff;display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></div><h3 style="font-size:17px">联系支持</h3><p style="font-size:13.5px;color:var(--ink-2);margin-top:8px">遇到问题？加入 QQ 群或提交工单。</p><a class="btn btn-ghost btn-sm" style="margin-top:16px" href="#">联系客服</a></div>
+  <div class="item-card" style="padding:24px"><div style="width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--accent-3),var(--accent));color:#fff;display:grid;place-items:center;margin-bottom:16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div><h3 style="font-size:17px">更新日志</h3><p style="font-size:13.5px;color:var(--ink-2);margin-top:8px">查看版本更新与功能变更记录。</p><a class="btn btn-ghost btn-sm" style="margin-top:16px" href="#">查看日志</a></div>
+</div>
+<div class="panel" style="margin-top:22px">
+  <div class="panel-head"><h3>常见问题</h3></div>
+  <div class="panel-body" style="display:flex;flex-direction:column;gap:4px">
+    <div style="padding:14px 6px;border-bottom:1px solid var(--line)"><b style="font-size:14.5px">积分是怎么扣除的？</b><p style="font-size:13.5px;color:var(--ink-2);margin-top:6px">每次生成先扣除模型基础积分，再按图片张数/视频任务与参数倍率计算。</p></div>
+    <div style="padding:14px 6px;border-bottom:1px solid var(--line)"><b style="font-size:14.5px">套餐与积分的区别？</b><p style="font-size:13.5px;color:var(--ink-2);margin-top:6px">套餐按月提供积分包与权益；积分充值只增加永久积分。</p></div>
+    <div style="padding:14px 6px"><b style="font-size:14.5px">如何导出剪映草稿？</b><p style="font-size:13.5px;color:var(--ink-2);margin-top:6px">在短剧项目页选择「导出剪映草稿」，生成后可直接导入剪映编辑。</p></div>
+  </div>
+</div></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+</body>
+</html>

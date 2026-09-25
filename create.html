@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-anim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>创作工作台 — 金立方 GoldCube</title>
+<link rel="stylesheet" href="redesign.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="M12 22V12"/><path d="M3 7l9 5 9-5"/></svg></span>金立方<span style="color:var(--ink-2);font-weight:500">&nbsp;GoldCube</span></a>
+    <nav class="side-nav"><a class="side-link active" href="create.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>创作</a><a class="side-link" href="canvas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>画布</a><a class="side-link" href="drama.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>短剧</a><a class="side-link" href="assets.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4l-2-3H8L6 7H2v13h18V7Z"/></svg>素材</a><a class="side-link" href="works.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-4-4-7 7"/></svg>作品</a><a class="side-link" href="community.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>社区</a><a class="side-link" href="prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>提示词</a><a class="side-link" href="my-prompts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16Z"/></svg>词库</a><a class="side-link" href="me.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>主页</a><a class="side-link" href="help.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"/><path d="M12 17h.01"/></svg>帮助</a></nav>
+    <div class="side-foot">
+      <a class="side-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>返回官网首页</a>
+    </div>
+  </aside>
+  <div class="app-main">
+    <header class="topbar">
+      <span class="tb-crumb">工作台 / 创作 Agent</span>
+      <div class="tb-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input placeholder="搜索…"></div>
+      <span class="points-pill">✦ 975</span>
+      <button class="icon-btn" id="notificationBtn" aria-label="通知中心" title="通知中心"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9Z"/><path d="M10 21h4"/></svg></button>
+      <button class="icon-btn" id="historyToggle" aria-label="打开创作历史" title="打开创作历史"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg></button>
+      <button class="icon-btn" id="assetPanelToggle" aria-label="打开资产面板" title="打开资产面板"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="1"/><circle cx="16" cy="12" r="1"/><circle cx="10" cy="18" r="1"/></svg></button>
+      <button class="icon-btn" id="themeToggle" aria-label="切换主题"></button>
+      <span style="position:relative">
+      <button class="avatar" id="userMenuBtn" aria-label="用户菜单">FA</button>
+      <div class="dropdown" id="userMenu">
+        <a class="dd-item" href="profile.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>个人中心</a>
+        <a class="dd-item" href="billing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>套餐中心</a>
+        <div class="dd-sep"></div>
+        <button class="dd-item danger" onclick="toast('已安全退出登录','ok')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>退出登录</button>
+      </div>
+    </span>
+    </header>
+    <main class="page">
+<div class="page-head">
+  <div><h1>创作 Agent</h1><p>从一个想法开始，Agent 帮你完成从策划到成品的完整流程。</p></div>
+</div>
+<div class="panel">
+  <div class="panel-body" style="padding:24px">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px">
+      <div class="seg" id="modeSeg"><button class="on">Agent 模式</button><button>智能模式</button></div>
+      <div style="position:relative">
+        <button class="btn btn-ghost btn-sm" id="modelBtn">智能模型 <span class="mono" style="font-size:11px;color:var(--ink-3)">▾</span></button>
+        <div class="popover" id="modelPop" style="width:300px">
+          <h4>选择生成模型</h4>
+          <div id="modelList"><div class="empty" style="padding:18px"><div class="t">正在加载模型列表…</div><div class="s">从云端 logical_models 拉取</div></div></div>
+        </div>
+      </div>
+      <div style="position:relative">
+        <button class="btn btn-ghost btn-sm" id="paramsBtn">生成参数 <span class="mono" style="font-size:11px;color:var(--ink-3)">▾</span></button>
+        <div class="popover" id="paramsPop" style="width:320px">
+          <h4>生成参数</h4>
+          <div class="field" style="margin-bottom:12px"><label>图片比例</label><div class="seg" style="width:100%"><button class="on">1:1</button><button>16:9</button><button>4:3</button><button>3:4</button><button>9:16</button></div></div>
+          <div class="field" style="margin-bottom:12px"><label>清晰度</label><div class="seg" style="width:100%"><button class="on">标准</button><button>高清 2K</button><button>超清 4K</button></div></div>
+          <div class="field" style="margin-bottom:0"><label>生成数量</label><div class="seg" style="width:100%"><button class="on">1 张</button><button>2 张</button><button>4 张</button></div></div>
+        </div>
+      </div>
+<div style="position:relative">
+        <button class="btn btn-ghost btn-sm" id="refBtn">引用 <span class="mono" style="font-size:11px;color:var(--ink-3)">▾</span></button>
+        <div class="popover" id="refPop" style="width:340px">
+          <h4>引用素材</h4>
+          <div class="empty" style="padding:18px"><div class="t">暂无引用素材</div><div class="s">上传参考图或选择站内素材</div></div>
+          <button class="btn btn-primary btn-sm" style="width:100%;margin-top:8px" data-modal="assetsOv">从素材库选择</button>
+        </div>
+      </div>
+      <div style="position:relative">
+        <button class="btn btn-ghost btn-sm" id="skillBtn">使用 Skill <span class="mono" style="font-size:11px;color:var(--ink-3)">▾</span></button>
+        <div class="popover" id="skillPop" style="width:340px">
+          <h4>选择 Agent Skill</h4>
+          <button class="opt on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>电商生图<span style="margin-left:auto;font-size:11px;color:var(--ink-3)">0.1.0</span></button>
+          <button class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>自然美颜精修<span style="margin-left:auto;font-size:11px;color:var(--ink-3)">2026-05-27</span></button>
+          <button class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>角色设定<span style="margin-left:auto;font-size:11px;color:var(--ink-3)">自定义</span></button>
+          <button class="opt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"/></svg>图片动效<span style="margin-left:auto;font-size:11px;color:var(--ink-3)">1.0.0</span></button>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="optimizeBtn" aria-label="优化提示词" disabled>✦ <span>优化</span></button>
+    </div>
+    <div class="chip-input input-3x">
+      <button class="icon-btn-sm" id="addAssetBtn" data-modal="assetsOv" aria-label="添加素材" title="添加素材"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></button>
+      <textarea id="ideaInput" rows="3" maxlength="4000" placeholder="描述你想创作的内容…" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:inherit;resize:none;line-height:1.6;min-height:58px"></textarea>
+      <button class="btn btn-primary btn-sm" id="genBtn" style="flex-shrink:0">开始生成</button>
+    </div>
+    <div class="chips" style="justify-content:flex-start;margin-top:14px">
+      <button class="chip" data-t="生成一张科幻城市概念图">科幻城市概念图</button>
+      <button class="chip" data-t="制作一段产品宣传视频">产品宣传视频</button>
+      <button class="chip" data-t="为电商产品生成详情页">电商详情页</button>
+      <button class="chip" data-t="创作一个短剧分镜脚本">短剧分镜脚本</button>
+    </div>
+  </div>
+</div>
+<div class="stat-row compact">
+  <div class="stat-card"><span class="k">今日任务</span><b>3</b><span>1 运行中 · 2 完成</span><span class="trend">+2</span></div>
+  <div class="stat-card"><span class="k">积分余额</span><b>975</b><span>今日 0 · 永久 975</span></div>
+  <div class="stat-card"><span class="k">素材库</span><b>18</b><span>图片 12 · 视频 6</span></div>
+  <div class="stat-card"><span class="k">画布项目</span><b>4</b><span>最近编辑 08/27</span></div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin:26px 0 14px">
+  <h3 style="font-size:17px">最近生成</h3>
+  <button class="btn btn-ghost btn-sm" data-modal="assetsOv">查看素材库</button>
+</div>
+<div class="grid4" id="genGrid">
+  <div class="item-card"><div class="item-thumb"><div class="art a1"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">未来都市概念图</div><div class="m">gpt-image-2 · 08/26 21:13</div></div></div>
+  <div class="item-card"><div class="item-thumb"><div class="art a2"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">线香推广海报</div><div class="m">gpt-image-2 · 08/26 17:55</div></div></div>
+  <div class="item-card"><div class="item-thumb"><div class="art a4"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">自然美颜样片</div><div class="m">gpt-image-2 · 08/26 17:54</div></div></div>
+  <div class="item-card"><div class="item-thumb"><div class="art a6"></div><div class="play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></div></div><div class="item-body"><div class="t">小红书线香高级海报</div><div class="m">08/26 16:43</div></div></div>
+</div>
+<div style="display:flex;gap:22px;margin-top:26px;align-items:flex-start">
+  <div class="panel" style="flex:1.4">
+    <div class="panel-head"><h3>项目与任务</h3><span class="sub">回到最近的项目，或查看仍在运行的任务</span><span class="act"><a class="btn btn-ghost btn-sm" href="canvas.html">全部项目</a></span></div>
+    <div class="panel-body">
+      <div class="item-card" style="display:flex;padding:16px;align-items:center;gap:14px;margin-bottom:14px">
+        <div style="width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--surface-2),var(--surface-3));border:1px solid var(--line);display:grid;place-items:center;color:var(--accent)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div style="flex:1"><div class="t" style="font-size:14.5px">金立方 GoldCube 画布 3</div><div class="m">最近编辑 · 08/27 21:20 · 6 个节点 · 7 条连线</div></div>
+        <a class="btn btn-primary btn-sm" href="canvas-detail.html">继续编辑</a>
+        <button class="btn btn-ghost btn-sm" onclick="toast('任务已加入队列','ok')">运行任务</button>
+      </div>
+      <div class="empty" style="padding:26px"><div class="t">当前没有运行中的任务</div><div class="s">新任务会实时显示在这里</div></div>
+    </div>
+  </div>
+  <div class="panel" style="flex:1">
+    <div class="panel-head"><h3>灵感发现</h3><span class="act"><a class="btn btn-ghost btn-sm" href="community.html">查看全部 →</a></span></div>
+    <div class="panel-body">
+      <div class="g-tags" style="margin-bottom:14px"><button class="on">全部</button><button>视觉设计</button><button>插画</button></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="item-card"><div class="item-thumb" style="aspect-ratio:1"><div class="art a3"></div></div></div>
+        <div class="item-card"><div class="item-thumb" style="aspect-ratio:1"><div class="art a5"></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="viewerOv">
+  <div class="modal wide" style="max-width:780px">
+    <div class="modal-head"><h3>查看大图</h3><span class="sub mono">gpt-image-2 · 2K</span><button class="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body" style="padding:18px"><div class="art a1" style="aspect-ratio:4/3;border-radius:12px;position:relative"><div class="shade"></div></div></div>
+    <div class="modal-foot"><button class="btn btn-ghost btn-sm" onclick="toast('已加入素材库','ok')">加入素材库</button><button class="btn btn-primary btn-sm" onclick="toast('已复制链接','ok')">复制链接</button></div>
+  </div>
+</div>
+<div class="overlay" id="notificationOv"><div class="modal" style="max-width:520px"><div class="modal-head"><h3>通知中心</h3><button class="close" aria-label="关闭通知中心">×</button></div><div class="modal-body"><p class="sub">站点公告与社区互动</p><div class="seg" style="margin-top:14px"><button class="on">公告</button><button>互动</button></div><div class="empty" style="margin-top:18px"><div class="t">暂时没有新公告</div><div class="s">后续通知会在这里集中展示</div></div></div><div class="modal-foot"><a class="btn btn-ghost btn-sm" href="announcements.html">查看全部公告</a></div></div></div>
+<div class="overlay" id="historyOv"><div class="modal" style="max-width:380px;margin-left:auto;margin-right:0;height:100%;border-radius:18px 0 0 18px"><div class="modal-head"><h3>创作历史</h3><button class="close" aria-label="关闭创作历史">×</button></div><div class="modal-body"><div class="toolbar"><button class="btn btn-primary btn-sm" onclick="toast('已新建创作对话','ok')">新建对话</button><span class="sub">2 条对话</span><button class="btn btn-ghost btn-sm" onclick="toast('已开启批量管理','ok')">批量管理</button></div><div class="list" style="margin-top:16px"><div class="list-row"><b>帮我生成一个好看的电商海报</b><span>08/26</span></div><div class="list-row"><b>我是走线香的，请帮我生成一个高级的线香推广海报</b><span>08/25</span></div></div></div></div></div>
+<div class="overlay" id="assetPanelOv"><div class="modal" style="max-width:420px;margin-left:auto;margin-right:0;height:100%;border-radius:18px 0 0 18px"><div class="modal-head"><h3>资产</h3><button class="close" aria-label="关闭资产面板">×</button></div><div class="modal-body"><div class="seg"><button class="on">当前对话</button><button>我的提示词</button><button>提示词库</button></div><div class="empty" style="margin-top:18px"><div class="t">当前对话还没有资产</div><div class="s">上传或生成内容后会显示在这里</div></div><button class="btn btn-primary" style="width:100%;margin-top:16px" data-modal="assetsOv">查看素材库</button></div></div></div>
+<script>
+(function(){
+  var modelBtn=document.getElementById('modelBtn'),modelPop=document.getElementById('modelPop');
+  var paramsBtn=document.getElementById('paramsBtn'),paramsPop=document.getElementById('paramsPop');
+  modelBtn.addEventListener('click',function(e){e.stopPropagation();paramsPop.classList.remove('open');modelPop.classList.toggle('open');});
+  paramsBtn.addEventListener('click',function(e){e.stopPropagation();modelPop.classList.remove('open');paramsPop.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!e.target.closest('#modelPop')&&!e.target.closest('#paramsPop')&&!e.target.closest('#refPop')&&!e.target.closest('#skillPop')){modelPop.classList.remove('open');paramsPop.classList.remove('open');refPop.classList.remove('open');skillPop.classList.remove('open');}});
+  var refBtn=document.getElementById('refBtn'),refPop=document.getElementById('refPop');
+  var skillBtn=document.getElementById('skillBtn'),skillPop=document.getElementById('skillPop');
+  if(refBtn){refBtn.addEventListener('click',function(e){e.stopPropagation();modelPop.classList.remove('open');paramsPop.classList.remove('open');skillPop.classList.remove('open');refPop.classList.toggle('open');});refPop.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){toast('已选择引用方式','ok');refPop.classList.remove('open');});});}
+  if(skillBtn){skillBtn.addEventListener('click',function(e){e.stopPropagation();modelPop.classList.remove('open');paramsPop.classList.remove('open');refPop.classList.remove('open');skillPop.classList.toggle('open');});skillPop.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){skillPop.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on');});o.classList.add('on');toast('已启用 Skill：'+o.textContent.trim().slice(0,8),'ok');skillPop.classList.remove('open');});});}
+  modelPop.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){modelPop.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on');});o.classList.add('on');modelBtn.innerHTML='智能模型 <span class="mono" style="font-size:11px;color:var(--ink-3)">· '+o.dataset.m+' ▾</span>';toast('已切换模型：'+o.dataset.m,'ok');modelPop.classList.remove('open');});});
+  paramsPop.querySelectorAll('.seg').forEach(function(seg){seg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;seg.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');});});
+  var genBtn=document.getElementById('genBtn'),input=document.getElementById('ideaInput');
+  async function generate(){
+    var t=input.value.trim();
+    if(!t){input.focus();toast('先描述你想创作的内容','warn');return;}
+    if(!window.gcApi){toast('后端连接尚未就绪，请稍后重试','warn');return;}
+    genBtn.disabled=true;genBtn.textContent='提交中…';
+    var selectedModel=modelPop.querySelector('.opt.on');
+    var selectedSkill=skillPop.querySelector('.opt.on');
+    var modeBtn=document.querySelector('#modeSeg .on');
+    var payload={clientRequestId:'goldcube-'+Date.now()+'-'+Math.random().toString(36).slice(2),surface:'chat',prompt:t,publicPrompt:t,assetIds:(window.gcSelectedAssetIds||[]).slice(),skillIds:selectedSkill?[selectedSkill.dataset.skill||selectedSkill.dataset.id||'']:[],modelIds:selectedModel?[selectedModel.dataset.m||'']:[]};
+    payload.skillIds=payload.skillIds.filter(Boolean);payload.modelIds=payload.modelIds.filter(Boolean);
+    try{
+      var result=await window.gcApi.createRun(payload);
+      var run=result&&result.data&&result.data.run||result&&result.run;
+      input.value=''; optimizeBtn.disabled=true;
+      if(run){
+        var card=document.createElement('div');card.className='item-card gc-run-card';card.dataset.runId=run.id;
+        card.innerHTML='<div class="item-thumb"><div class="art a1"></div></div><div class="item-body"><div class="t">'+t.slice(0,28)+'</div><div class="m">任务已提交 · '+(run.status||'planning')+'</div></div>';
+        document.getElementById('genGrid').prepend(card);
+        toast('任务已提交，正在后台生成','ok');
+        pollRun(run.id,card,t);
+      }else toast('任务已提交','ok');
+    }catch(e){toast(e.message||'创作请求失败','error');}
+    finally{genBtn.disabled=false;genBtn.textContent='开始生成';}
+  }
+  function pollRun(id,card,title){
+    var timer=setInterval(async function(){try{var p=await window.gcApi.getRun(id);var r=p&&p.data&&p.data.run||p&&p.run;if(!r)return;var m=card.querySelector('.m');if(m)m.textContent='任务状态 · '+r.status;if(['completed','failed','cancelled'].indexOf(r.status)>=0){clearInterval(timer);toast(r.status==='completed'?'生成完成':r.status==='failed'?'生成失败':'任务已取消',r.status==='completed'?'ok':'warn');}}catch(e){clearInterval(timer);}},2200);
+  }
+  genBtn.addEventListener('click',generate);
+  document.getElementById('modeSeg').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;document.getElementById('modeSeg').querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');toast('已切换：'+b.textContent,'ok');});
+  document.getElementById('genGrid').addEventListener('click',function(e){var card=e.target.closest('.item-card');if(card)window.openModal('viewerOv');});
+  var optimizeBtn=document.getElementById('optimizeBtn');
+  if(optimizeBtn){input.addEventListener('input',function(){optimizeBtn.disabled=!input.value.trim();}); optimizeBtn.addEventListener('click',async function(){var raw=input.value.trim();if(!raw||!window.gcApi||optimizeBtn.disabled)return;try{optimizeBtn.disabled=true;optimizeBtn.textContent='优化中…';var mode=(document.querySelector('#modeSeg .on')||{}).dataset&&document.querySelector('#modeSeg .on').dataset.mode||'agent';var result=await window.gcApi.optimize(raw,{requestId:'goldcube-opt-'+Date.now(),mode:mode});var optimized=result&&result.data&&result.data.prompt||result&&result.prompt;if(optimized){input.value=optimized;toast('提示词已优化','ok');}else{throw new Error('优化结果为空');}}catch(e){toast(e.message||'提示词优化失败','error');}finally{optimizeBtn.disabled=!input.value.trim();optimizeBtn.innerHTML='✦ <span>优化</span>';}});}
+  document.getElementById('notificationBtn').addEventListener('click',function(){window.openModal('notificationOv');});
+  document.getElementById('historyToggle').addEventListener('click',function(){window.openModal('historyOv');});
+  document.getElementById('assetPanelToggle').addEventListener('click',function(){window.openModal('assetPanelOv');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){modelPop.classList.remove('open');paramsPop.classList.remove('open');refPop.classList.remove('open');skillPop.classList.remove('open');} if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();input.focus();}});
+})();
+</script></main>
+  </div>
+</div>
+<script>
+(function(){
+  const root=document.documentElement, btn=document.getElementById('themeToggle');
+  const sun="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7\"/></svg>", moon="<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8Z\"/></svg>";
+  function apply(d){root.classList.toggle('dark',d);btn.innerHTML=d?moon:sun;btn.setAttribute('aria-label',d?'切换浅色模式':'切换深色模式');localStorage.setItem('goldcube-theme',d?'dark':'light');}
+  apply(localStorage.getItem('goldcube-theme')==='dark');
+  btn.addEventListener('click',()=>apply(!root.classList.contains('dark')));
+})();
+</script>
+<div class="toast-wrap" id="toasts"></div>
+<script src="app.js"></script>
+<div class="overlay" id="assetsOv">
+  <div class="modal wide">
+    <div class="modal-head"><h3>素材库</h3><span class="sub">选择素材作为参考</span><button class="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+    <div class="modal-body">
+      <div class="grid4" style="grid-template-columns:repeat(3,1fr)">
+        <div class="item-card" onclick="toast('已选用：科幻城市 1','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a1"></div></div><div class="item-body"><div class="t">科幻城市 1</div><div class="m">png · 1.2 MB</div></div></div>
+        <div class="item-card" onclick="toast('已选用：线香主图 A','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a2"></div></div><div class="item-body"><div class="t">线香主图 A</div><div class="m">png · 2.4 MB</div></div></div>
+        <div class="item-card" onclick="toast('已选用：美颜样片','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a4"></div></div><div class="item-body"><div class="t">美颜样片</div><div class="m">jpg · 0.9 MB</div></div></div>
+        <div class="item-card" onclick="toast('已选用：品牌海报','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a6"></div></div><div class="item-body"><div class="t">品牌海报</div><div class="m">png · 3.1 MB</div></div></div>
+        <div class="item-card" onclick="toast('已选用：广告片 10s','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a3"></div></div><div class="item-body"><div class="t">广告片 10s</div><div class="m">mp4 · 18.4 MB</div></div></div>
+        <div class="item-card" onclick="toast('已选用：品牌短剧试播','ok')"><div class="item-thumb" style="aspect-ratio:4/3"><div class="art a5"></div></div><div class="item-body"><div class="t">品牌短剧试播</div><div class="m">mp4 · 29.8 MB</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
