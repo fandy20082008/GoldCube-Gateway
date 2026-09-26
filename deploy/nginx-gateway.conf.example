@@ -15,6 +15,7 @@ server {
     ssl_protocols TLSv1.2 TLSv1.3;
 
     client_max_body_size 100m;
+    client_body_temp_path /var/lib/nginx/gcai-body;
     location / {
         proxy_pass {{GATEWAY_ORIGIN}};
         proxy_http_version 1.1;

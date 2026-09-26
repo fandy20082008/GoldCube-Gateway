@@ -1,0 +1,2 @@
+# Keep this path aligned with nginx-gateway.conf.example.
+d /var/lib/nginx/gcai-body 0700 www-data www-data -
